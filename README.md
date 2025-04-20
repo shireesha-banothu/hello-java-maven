@@ -67,3 +67,34 @@ In the project root directory, create the `pom.xml` file with the following Mave
     </plugins>
   </build>
 </project>
+
+# Jenkins Maven Build – Commands Reference
+
+## System & Git Commands
+
+```bash
+# Check Java version
+java -version
+
+# Check Maven version
+mvn -v
+
+# Clone the repository
+git clone https://github.com/shireesha-banothu/hello-java-maven.git
+cd hello-java-maven
+# Start Jenkins using Docker
+docker run -p 8080:8080 jenkins/jenkins:lts
+
+Access Jenkins at: http://localhost:8080
+
+# Add a screenshot or file to staging
+git add output_screenshot.png
+
+# If you added a README or multiple files:
+git add README.md output_screenshot.png
+
+# Commit the changes
+git commit -m "Add README and build success screenshot"
+
+# Push to GitHub
+git push origin main
